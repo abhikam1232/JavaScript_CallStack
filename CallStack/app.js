@@ -1,4 +1,4 @@
-function work(){
+/** function work(){
     console.log(" Today's tasks have started executing!!! ");
     console.log(" This is the work function !! ");
 }
@@ -31,4 +31,23 @@ function third() {
 
 console.log(" Program has been started");
 first();
-console.log("program Ended !!");
+console.log("program Ended !!"); **/
+
+
+// Third call stack implemented:- 
+
+
+function one() {
+    return 1; // This function is just returning one value which is "1"
+}
+
+function two() {
+    return one() + one(); // This function is just adding the value 1+1 = 2
+}
+
+function three() {
+    let ans = two() + one();
+    console.log(ans);
+}
+
+three();
