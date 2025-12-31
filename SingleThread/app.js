@@ -9,3 +9,18 @@ setTimeout( () => {
 }, 2000);
 
 console.log(" I am working hard!!");
+
+
+// What are callbacks:- 
+// Callbacks passes an argument from one function to another function:- 
+function greetings(name, callback) {
+    console.log(`Hello, ${name}`);
+    callback();
+}
+
+
+function aftergreetings() {
+    console.log(" Greetings are completed");
+}
+
+greetings("Abhishek", aftergreetings);
