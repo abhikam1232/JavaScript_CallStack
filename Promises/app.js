@@ -68,7 +68,7 @@ SavetoBase("Apna College", () => {
     }
 ); **/
 
-function processOrder(data) {
+/** function processOrder(data) {
     return new Promise( (resolve, reject) =>{
         let network = Math.floor(Math.random() * 10)+1;
         if (network >= 5){
@@ -86,6 +86,26 @@ processOrder("order data")
     })
     .catch((err) => {
         console.log(err);
+    }); **/
+
+function saveToDB(data) {
+    return new Promise((resolve, reject) => {
+        let netSpeed = Math.floor(Math.random() * 10) + 1;
+        if (netSpeed >= 5) {
+            resolve();
+        } else {
+            reject();
+        }
     });
+};
+
+saveToDB("Apna collgege")
+    .then(() => {
+        console.log("Promise was resolved");
+    })
+    .catch(() => {
+        console.log("Promise was Rejected");
+    });
+
 
 
