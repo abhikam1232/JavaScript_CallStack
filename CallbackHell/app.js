@@ -60,4 +60,6 @@ animateText("lightblue", "blue", 1000, ()=> {
             animateText("pink", "red", 1000);
         });
     });
-})
+});
+
+
