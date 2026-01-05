@@ -88,7 +88,7 @@ processOrder("order data")
         console.log(err);
     }); **/
 
-function saveToDB(data) {
+/** function saveToDB(data) {
     return new Promise((resolve, reject) => {
         let netSpeed = Math.floor(Math.random() * 10) + 1;
         if (netSpeed >= 5) {
@@ -105,7 +105,53 @@ saveToDB("Apna collgege")
     })
     .catch(() => {
         console.log("Promise was Rejected");
+    }); **/
+
+
+
+// Another demo question to fetch a user data using promises:- 
+
+function fetchUserData(user) {
+    return new Promise((resolve, reject) => {
+        let val = Math.floor(Math.random() * 10) + 1;
+        console.log(val);
+
+        if (val >= 6) {
+            resolve();
+        } else {
+            reject();
+        }
+    });
+
+};
+
+fetchUserData("data is getting Loaded")
+    .then(() => {
+        console.log(" Data has been sucessfully fetched!!");
+    })
+    .catch(() => {
+        console.info(" Data has Not sucessfully fteched!!!");
     });
 
 
+// upload file using promises!!! 
 
+function uploadFile(file) {
+    return new Promise((resolve, reject) => {
+        let load = Math.floor(Math.random() * 10) + 1;
+        if (load >= 4) {
+            resolve();
+        } else {
+            reject();
+        }
+
+    });
+};
+
+uploadFile("File is loading")
+    .catch(() => {
+        console.info(" File has been uploaded successfully!!");
+    })
+    .then(() => {
+        console.info(" File has not yet Loaded Successfully");
+    });
