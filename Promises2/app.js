@@ -32,15 +32,48 @@ function SaveDataBase(data) {
     })
 };
 
-SaveDataBase("Saving to DataBase")
+SaveDataBase(" Data Processing ")
     .then(() => {
-        console.info("Data 1: has been Successfully Saved");
-        SaveDataBase(" Loading for Another one")
-            .then(() => {
-                console.info(" Data 2: was successfuly saved!!");
-            });
+        console.info(" Data 1:  Saved SuccessFully")
+        return SaveDataBase(" Heading for Data 2");
+    })
+    .then(() => {
+        console.info(" Data 2: Saved SuccessFully")
+        return SaveDataBase("Heading for Data 3");
+    })
+    .then(() => {
+        console.log(" Data 3:  Saved SuccessFully")
     })
     .catch(() => {
-        console.log(" Data Storing Failed");
+        console.info(" Data not NOT YET Saved!!");
+    });
+
+// Another Promise:- 
+
+function onlineOrder(step) {
+    return new Promise((resolve, reject) => {
+        let val = Math.floor(Math.random() * 10) + 1;
+        if (val >= 5) {
+            resolve();
+        } else {
+            reject();
+        }
+    });
+};
+
+onlineOrder("1st step")
+    .then(() => {
+        console.info(" Order Placed")
+        return onlineOrder(" 2nd order");
+    })
+    .then(() => {
+        console.info(" Payment processed")
+        return onlineOrder("3rd step");
+    })
+    .then(() => {
+        console.info(" order Delivered");
+    })
+    .catch(() => {
+        console.info(" ORDER FAILED ")
     });
 
