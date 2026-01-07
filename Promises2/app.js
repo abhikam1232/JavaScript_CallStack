@@ -21,7 +21,7 @@ orderFood()
     });
  **/
 // Save the data to the data Base:- 
-function SaveDataBase(data) {
+/**function SaveDataBase(data) {
     return new Promise((resolve, reject) => {
         let num = Math.floor(Math.random() * 10) + 1;
         if (num >= 6) {
@@ -46,7 +46,7 @@ SaveDataBase(" Data Processing ")
     })
     .catch(() => {
         console.info(" Data not NOT YET Saved!!");
-    });
+    }); **/
 
 // Another Promise:- 
 
@@ -54,26 +54,30 @@ function onlineOrder(step) {
     return new Promise((resolve, reject) => {
         let val = Math.floor(Math.random() * 10) + 1;
         if (val >= 5) {
-            resolve();
+            resolve(" You can have your Meal ");
         } else {
-            reject();
+            reject("  u need to cook");
         }
     });
 };
 
 onlineOrder("1st step")
-    .then(() => {
+    .then((result) => {
         console.info(" Order Placed")
+        console.log(" result of promise", result)
         return onlineOrder(" 2nd order");
     })
-    .then(() => {
+    .then((result) => {
         console.info(" Payment processed")
+        console.log("result of promise", result)
         return onlineOrder("3rd step");
     })
-    .then(() => {
+    .then((result) => {
         console.info(" order Delivered");
+        console.log(" result of promise", result);
     })
-    .catch(() => {
+    .catch((error) => {
         console.info(" ORDER FAILED ")
+        console.log(" error of promise", error)
     });
 
